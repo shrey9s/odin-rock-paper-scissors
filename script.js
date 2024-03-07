@@ -50,5 +50,26 @@ function playRound(playerSelection, computerSelection) {
 function playGame() {
     // plays a five-round game
     // keeps score and reports winner/loser at end
+    let score = 0;
+    let playerSelection, computerSelection, result;
+    for (i = 0; i < 5; i++) {
+        playerSelection = prompt("Rock, paper or scissors?");
+        computerSelection = getComputerChoice();
+        result = playRound(playerSelection, computerSelection);
+        console.log(result);
+        if (result.includes("You Win!")) {    // Checking if player won the round
+            score += 1;
+        }
+    }
+    let finalResult = `You won ${score} rounds out of 5! `;
+    if (score >= 3) {
+        finalResult += `Congratulations, you win!`;
+    }
+    else {
+        finalResult += `You lose!`;
+    }
+    console.log(finalResult);
 }
+
+playGame();
 
