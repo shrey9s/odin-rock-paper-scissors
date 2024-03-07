@@ -61,13 +61,8 @@ function playGame() {
             score += 1;
         }
     }
-    let finalResult = `You won ${score} rounds out of 5! `;
-    if (score >= 3) {
-        finalResult += `Congratulations, you win!`;
-    }
-    else {
-        finalResult += `You lose!`;
-    }
+    let finalResult = `You won ${score} round${(score >= 2) ? 's' : ''} out of 5. `;
+    finalResult += (score >= 3) ? `Congratulations, you win!` : `You lose!`; 
     console.log(finalResult);
 }
 
