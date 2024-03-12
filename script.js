@@ -15,12 +15,12 @@ function playRound(playerSelection, computerSelection) {
     else if ((playerSelection === "Rock" && computerSelection === "Scissors") ||
         (playerSelection === "Paper" && computerSelection === "Rock") ||
         (playerSelection === "Scissors" && computerSelection === "Paper")) {    // Player wins
-        return `You Win! ${playerSelection} beats ${computerSelection}.`;
+        return `${playerSelection} beats ${computerSelection}. You Win!`;
     }
     else if ((playerSelection === "Rock" && computerSelection === "Paper") ||
         (playerSelection === "Paper" && computerSelection === "Scissors") ||
         (playerSelection === "Scissors" && computerSelection === "Rock")) {    // Computer wins
-        return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+        return `${computerSelection} beats ${playerSelection}. You Lose!`;
     }
 }
 
@@ -35,23 +35,27 @@ function playGame() {
     // keeps score and reports winner/loser at end
     let playerScore = 0;
     let computerScore = 0;
-    for (i = 0; i < 5; i++) {
-        let playerSelection = prompt("Rock, paper or scissors?");
-        playerSelection = capitaliseWord(playerSelection.toLowerCase());
+    for (i = 1; i <= 5; i++) {
+        let playerSelection = (prompt(`Round ${i}: Rock, paper or scissors?`)).toLowerCase();
+        while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+            playerSelection = (prompt("Please choose either rock, paper or scissors")).toLowerCase();
+        } // check for valid input (no empty strings or other strings/numbers)
+        playerSelection = capitaliseWord(playerSelection);
         let computerSelection = getComputerChoice();
         let result = playRound(playerSelection, computerSelection);
         if (result.includes("You Win!")) playerScore += 1;
         else if (result.includes("You Lose!")) computerScore += 1;
-        console.log(`You chose ${playerSelection}. The computer chose ${computerSelection}.\n` + result + `\nScore: ${playerScore}:${computerScore}`);
+        console.log(`Round ${i}:\nYou chose ${playerSelection}. The computer chose ${computerSelection}.\n` + result + `\nScore: ${playerScore}:${computerScore}`);
     }
+    let finalResult = `Final Score: ${playerScore}:${computerScore}\n`;
     if (playerScore === computerScore) {
-        console.log(`Final Score: ${playerScore}:${computerScore}\nIt's a tie!`);
+        console.log(finalResult + "It's a tie!");
     }
     else if (playerScore > computerScore) {
-        console.log(`Final Score: ${playerScore}:${computerScore}\nCongratulations, you win!`);
+        console.log(finalResult + "Congratulations, you win!");
     }
     else if (playerScore < computerScore) {
-        console.log(`Final Score: ${playerScore}:${computerScore}\nSorry, you lose!`);
+        console.log(finalResult + "Sorry, you lose!");
     }
 }
 
