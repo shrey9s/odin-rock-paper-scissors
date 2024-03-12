@@ -1,5 +1,6 @@
 Alternate way of writing playRound code:
 
+#1
 if (playerSelection === computerSelection) {    // Tie
     return `It's a tie! You both chose ${playerSelection}`;
 } 
@@ -28,4 +29,37 @@ else if (playerSelection === "scissors" && computerSelection === "rock") {
 }
 else if (playerSelection === "scissors" && computerSelection === "paper") {
     return "You Win! Scissors beats Paper";
+}
+
+#2
+
+if (playerSelection === computerSelection) {    // Tie
+    return `It's a tie! You both chose ${playerSelection}`;
+}
+ 
+else {    // Not a tie
+    if (playerSelection === "rock") {    // Player chooses rock
+        if (computerSelection === "paper") {
+            return "You Lose! Paper beats Rock";
+        }
+        else if (computerSelection === "scissors") { // (adding condition with else if for readability)
+            return "You Win! Rock beats Scissors";
+        }
+    }
+    else if (playerSelection === "paper") {    // Player chooses paper
+        if (computerSelection === "rock") {
+            return "You Win! Paper beats Rock";
+        }
+        else if (computerSelection === "scissors") {
+            return "You Lose! Scissors beats Paper";
+        }
+    }
+    else if (playerSelection === "scissors") {    // Player chooses scissors
+        if (computerSelection === "rock") {
+            return "You Lose! Rock beats Scissors";
+        }
+        else if (computerSelection === "paper") {
+            return "You Win! Scissors beats Paper";
+        }
+    }
 }
