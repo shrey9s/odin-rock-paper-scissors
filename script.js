@@ -1,6 +1,6 @@
 function getComputerChoice() {
     // will randomly return 'Rock', 'Paper' or 'Scissors'
-    const choices = ["rock", "paper", "scissors"];
+    const choices = ["Rock", "Paper", "Scissors"];
     let randomIndex = Math.floor(Math.random() * 3);
     let computerChoice = choices[randomIndex];
     return computerChoice;
@@ -9,36 +9,24 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     // plays a single round
     // returns a string declaring winner or tie
-    playerSelection = playerSelection.toLowerCase();
+    playerSelection = capitaliseWord(playerSelection.toLowerCase());
     if (playerSelection === computerSelection) {    // Tie
         return `It's a tie! You both chose ${playerSelection}`;
-    } 
-    else {    // Not a tie
-        if (playerSelection === "rock") {    // Player chooses rock
-            if (computerSelection === "paper") {
-                return "You Lose! Paper beats Rock";
-            }
-            else if (computerSelection === "scissors") { // (adding condition with else if for readability)
-                return "You Win! Rock beats Scissors";
-            }
-        }
-        else if (playerSelection === "paper") {    // Player chooses paper
-            if (computerSelection === "rock") {
-                return "You Win! Paper beats Rock";
-            }
-            else if (computerSelection === "scissors") {
-                return "You Lose! Scissors beats Paper";
-            }
-        }
-        else if (playerSelection === "scissors") {    // Player chooses scissors
-            if (computerSelection === "rock") {
-                return "You Lose! Rock beats Scissors";
-            }
-            else if (computerSelection === "paper") {
-                return "You Win! Scissors beats Paper";
-            }
-        }
     }
+    else if ((playerSelection === "Rock" && computerSelection === "Scissors") ||    
+            (playerSelection === "Paper" && computerSelection === "Rock") ||
+            (playerSelection === "Scissors" && computerSelection === "Paper")) {    // Player wins
+                return `You Win! ${playerSelection} beats ${computerSelection}`;
+            }
+    else if ((playerSelection === "Rock" && computerSelection === "Paper") || 
+            (playerSelection === "Paper" && computerSelection === "Scissors") ||
+            (playerSelection === "Scissors" && computerSelection === "Rock")) {    // Computer wins
+                return `You Lose! ${computerSelection} beats ${playerSelection}`;
+            }
+}
+
+function capitaliseWord(word) {
+    return (word.slice(0,1)).toUpperCase() + word.slice(1, word.length);
 }
 
 // Test code
@@ -62,7 +50,7 @@ function playGame() {
         }
     }
     let finalResult = `You won ${score} round${(score >= 2) ? 's' : ''} out of 5. `;
-    finalResult += (score >= 3) ? `Congratulations, you win!` : `You lose!`; 
+    finalResult += (score >= 3) ? `Congratulations, you win!` : `You lose!`;
     console.log(finalResult);
 }
 
