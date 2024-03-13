@@ -45,6 +45,25 @@ body {
     gap: 60px;
 }
 
+.btn {
+    width: 125px;
+    height: 125px;
+    border: 3px dashed #17452a;  
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: "Press Start 2P", system-ui;
+    background-color: #65ff65;
+    color: #17452a;
+    cursor: pointer;
+    transition-duration: 0.2s;  /* speed of hover effect */
+}
+  
+.btn:hover {
+    border: 3px dashed #65ff65; 
+    background-color: #17452a;
+    color: #65ff65;
+}
+
 .results {
     margin: 36px 0;
     font-size: 14px;
@@ -58,18 +77,6 @@ body {
     padding: 20px 0;
     background-color: #17452a;
     color: #65ff65;
-}
-
-button {
-    width: 125px;
-    height: 125px;
-    border: 3px dashed #17452a;  
-    border-radius: 10px;
-    font-size: 14px;
-    font-family: "Press Start 2P", system-ui;
-    color: #17452a;
-    background-color: #65ff65;
-    cursor: pointer;
 }
 
 hr {
