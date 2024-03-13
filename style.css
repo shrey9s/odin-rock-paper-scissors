@@ -40,12 +40,12 @@ body {
 }
 
 .buttons {
+    margin: 36px 0;
     display: flex;
     gap: 60px;
 }
 
 .results {
-    margin-top: 30px;
     font-size: 14px;
     line-height: 2;
 }
