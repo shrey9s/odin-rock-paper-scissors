@@ -38,19 +38,13 @@ function displayResult(result, playerSel, computerSel) {
 function endGame() {
     // Create paragraph to hold final result
     const finalResult = document.createElement("p");
+    finalResult.classList.toggle("final-result");
     finalResult.textContent = "GAME OVER!!!";
     finalResult.appendChild(document.createElement("br"));
     finalResult.appendChild(document.createTextNode(`Final Score: ${playerScore}:${computerScore}`));
     finalResult.appendChild(document.createElement("br"));
     finalResult.appendChild(document.createTextNode((playerScore === 5) ? "Congratulations, you win!" : "Sorry, you lose!"));
     resultsDiv.appendChild(finalResult);
-
-    // Add styling to paragraph
-    finalResult.style.border = "3px dashed #65ff65";
-    finalResult.style.padding = "20px 0px";
-    finalResult.style.backgroundColor = "#17452a";
-    finalResult.style.color = "#65ff65";
-    finalResult.style.marginTop = "36px";
 
     // Reset game
     playerScore = 0;
