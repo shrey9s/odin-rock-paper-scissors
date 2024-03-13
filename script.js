@@ -43,7 +43,6 @@ function endGame() {
     finalResultPara.appendChild(document.createTextNode((playerScore === 5) ? "Congratulations, you win!" : "Sorry, you lose!"));
     resultsDiv.appendChild(finalResultPara);
     resultsDiv.appendChild(document.createElement("hr"));
-
     // Reset game
     playerScore = 0;
     computerScore = 0;
@@ -55,12 +54,6 @@ const resultsDiv = document.querySelector(".results");
 
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach((btn) => btn.addEventListener("click", () => { playRound(btn.textContent); }));
-
-
-
-// Need to keep count of score so that game stops and
-// winner is announced once a player reaches 5 points
-
 
 
 
