@@ -40,18 +40,20 @@ body {
 }
 
 .buttons {
-    margin: 36px 0;
+    margin-top: 36px;
     display: flex;
     gap: 60px;
 }
 
 .results {
+    margin: 36px 0;
     font-size: 14px;
     line-height: 2;
 }
 
 .final-result {
-    margin: 36px 0;
+    margin-top: 36px;
+    margin-bottom: 0;
     border: 3px dashed #65ff65;
     padding: 20px 0;
     background-color: #17452a;
