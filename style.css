@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     background-color: green;
     font-family: "Press Start 2P", system-ui;
+    color: #17452a;
 }
 
 .header, .footer {
@@ -16,6 +17,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: lightgreen;
+    border: 3px dashed #17452a;
 }
 
 .header {
@@ -34,26 +36,34 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    color: #ace538;
 }
 
 .buttons {
     display: flex;
-    gap: 50px;
+    gap: 60px;
 }
 
 .results {
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 14px;
+    line-height: 1.5;
 }
 
 button {
     width: 125px;
     height: 125px;
-    border: none;
-    font-size: 14px;
+    border: 3px dashed #17452a;  
     border-radius: 10px;
-    background-color: aquamarine;
+    font-size: 14px;
     font-family: "Press Start 2P", system-ui;
+    color: #17452a;
+    background-color: #65ff65;
+    cursor: pointer;
+}
+
+hr {
+    border: 2px dashed #65ff65;
 }
 
 
