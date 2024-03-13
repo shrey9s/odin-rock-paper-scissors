@@ -12,7 +12,6 @@ body {
 }
 
 .header, .footer {
-    height: 72px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,12 +20,13 @@ body {
 }
 
 .header {
-    font-size: 36px;
+    height: 72px;
+    font-size: 32px;
 }
 
 .footer {
-    height: 48px;
-    font-size: 12px;
+    height: 40px;
+    font-size: 10px;
 }
 
 .content {
@@ -36,7 +36,7 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    color: #ace538;
+    color: lightgreen;
 }
 
 .buttons {
@@ -47,7 +47,7 @@ body {
 .results {
     margin-top: 30px;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 2;
 }
 
 button {
@@ -63,8 +63,17 @@ button {
 }
 
 hr {
-    border: 2px dashed #65ff65;
+    border: 1px dashed lightgreen;
 }
+
+/*
+p {
+    border: 2px dashed #65ff65;
+    padding: 20px 0px;
+    background-color: #17452a;
+    color: #65ff65;
+}
+*/
 
 
 
